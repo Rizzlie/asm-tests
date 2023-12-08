@@ -1,0 +1,33 @@
+@for (error of errors | keyvalue; track $index) {
+  @switch (error.key) {
+    @case ('required') {
+      <span> {{ displayName }} is required </span>
+    }
+
+    @case ('email') {
+      <span> {{ displayName }} is not a valid email </span>
+    }
+
+    @case ('minlength') {
+      <span>
+        {{ displayName }} must be at least
+        {{ error.value.requiredLength }} characters long
+      </span>
+    }
+
+    @case ('maxlength') {
+      <span>
+        {{ displayName }} cannot be more than
+        {{ error.value.requiredLength }} characters long
+      </span>
+    }
+
+    @case ('matching') {
+      <span> {{ displayName }} must match {{ error.value }} </span>
+    }
+
+    @default {
+      <span>{{ displayName }} is invalid</span>
+    }
+  }
+}

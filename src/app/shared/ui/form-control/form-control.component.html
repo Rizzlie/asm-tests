@@ -1,0 +1,34 @@
+@switch (type) {
+  @case ('text') {
+    <ng-container *ngTemplateOutlet="standardControl" />
+  }
+  @case ('email') {
+    <ng-container *ngTemplateOutlet="standardControl" />
+  }
+  @case ('password') {
+    <ng-container *ngTemplateOutlet="standardControl" />
+  }
+  @case ('checkbox') {
+    <ng-container *ngTemplateOutlet="checkboxControl" />
+  }
+}
+
+<ng-template #standardControl>
+  <div>
+    <label [for]="controlName"> {{ displayName }} </label>
+    <input [id]="controlName" [formControl]="control" [type]="type" />
+
+    @if (control.touched && control.errors) {
+      <asm-form-control-error
+        [errors]="control.errors"
+        [displayName]="displayName" />
+    }
+  </div>
+</ng-template>
+
+<ng-template #checkboxControl>
+  <div>
+    <input [id]="controlName" [formControl]="control" type="checkbox" />
+    <label [for]="controlName"> {{ displayName }} </label>
+  </div>
+</ng-template>

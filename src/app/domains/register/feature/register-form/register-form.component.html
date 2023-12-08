@@ -1,0 +1,57 @@
+@if (success()) {
+  <div>Success</div>
+}
+
+@if (loading()) {
+  <div>Loading...</div>
+}
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  @if (form.errors && form.errors['login']) {
+    <div>Login taken!</div>
+  }
+
+  <asm-form-control
+    type="text"
+    displayName="First name"
+    controlName="firstName"
+    [control]="form.controls.firstName" />
+
+  <asm-form-control
+    type="text"
+    displayName="Last name"
+    controlName="lastName"
+    [control]="form.controls.lastName" />
+
+  <asm-form-control
+    type="text"
+    displayName="Login"
+    controlName="login"
+    [control]="form.controls.login" />
+
+  <asm-form-control
+    type="email"
+    displayName="Email"
+    controlName="email"
+    [control]="form.controls.email" />
+
+  <asm-form-control
+    type="password"
+    displayName="Password"
+    controlName="password"
+    [control]="form.controls.password" />
+
+  <asm-form-control
+    type="password"
+    displayName="Repeat password"
+    controlName="repeatPassword"
+    [control]="form.controls.repeatPassword" />
+
+  <asm-form-control
+    type="checkbox"
+    displayName="Terms of service"
+    controlName="tos"
+    [control]="form.controls.tos" />
+
+  <button [disabled]="form.invalid || loading()">Register</button>
+</form>
