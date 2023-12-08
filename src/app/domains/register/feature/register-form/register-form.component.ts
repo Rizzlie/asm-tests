@@ -1,4 +1,4 @@
-import { ButtonComponent, FormControlComponent } from '@/ui';
+import { ButtonComponent, FormControlComponent, LoaderComponent } from '@/ui';
 import { EMAIL_PATTERN, matchValidator } from '@/utils';
 import { Component, signal } from '@angular/core';
 import {
@@ -11,7 +11,12 @@ import {
 @Component({
   selector: 'asm-register-form',
   standalone: true,
-  imports: [ReactiveFormsModule, FormControlComponent, ButtonComponent],
+  imports: [
+    ReactiveFormsModule,
+    FormControlComponent,
+    ButtonComponent,
+    LoaderComponent,
+  ],
   templateUrl: './register-form.component.html',
   styleUrl: './register-form.component.scss',
 })
