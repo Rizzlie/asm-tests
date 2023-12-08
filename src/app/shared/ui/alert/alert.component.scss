@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.alert {
+  width: 100%;
+  padding: var(--gap-y) var(--gap-x);
+  border: 1px solid var(--border-color);
+  text-align: center;
+
+  &-success {
+    border-color: #64a864;
+    background-color: #caffca;
+    color: #64a864;
+  }
+
+  &-error {
+    border-color: #ff6b6b;
+    background-color: #ffd6d6;
+    color: #ff6b6b;
+  }
+}

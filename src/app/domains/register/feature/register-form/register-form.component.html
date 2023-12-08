@@ -1,5 +1,5 @@
 @if (success()) {
-  <div>Success</div>
+  <asm-alert class="m-b-10" type="success">Success!</asm-alert>
 }
 
 @if (loading()) {
@@ -8,7 +8,7 @@
 
 <form [formGroup]="form" (ngSubmit)="submit()">
   @if (form.errors && form.errors['login']) {
-    <div>Login taken!</div>
+    <asm-alert class="m-b-10" type="error">Login taken!</asm-alert>
   }
 
   <asm-form-control

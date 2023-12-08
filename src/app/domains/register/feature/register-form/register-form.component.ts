@@ -1,4 +1,9 @@
-import { ButtonComponent, FormControlComponent, LoaderComponent } from '@/ui';
+import {
+  AlertComponent,
+  ButtonComponent,
+  FormControlComponent,
+  LoaderComponent,
+} from '@/ui';
 import { EMAIL_PATTERN, matchValidator } from '@/utils';
 import { Component, signal } from '@angular/core';
 import {
@@ -16,6 +21,7 @@ import {
     FormControlComponent,
     ButtonComponent,
     LoaderComponent,
+    AlertComponent,
   ],
   templateUrl: './register-form.component.html',
   styleUrl: './register-form.component.scss',
@@ -53,11 +59,19 @@ export class RegisterFormComponent {
       if (this.form.value.login === 'admin') {
         this.form.setErrors({ login: 'alreadyExists' });
       } else {
-        this.success.set(true);
+        this.showSuccess();
         this.form.reset();
       }
 
       this.loading.set(false);
     }, 1500);
+  }
+
+  showSuccess() {
+    this.success.set(true);
+
+    setTimeout(() => {
+      this.success.set(false);
+    }, 3000);
   }
 }
