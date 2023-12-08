@@ -53,5 +53,7 @@
     controlName="tos"
     [control]="form.controls.tos" />
 
-  <button [disabled]="form.invalid || loading()">Register</button>
+  <asm-button type="submit" [disabled]="form.invalid || loading()">
+    Register
+  </asm-button>
 </form>

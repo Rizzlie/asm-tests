@@ -1,0 +1,17 @@
+.control {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: calc(var(--gap-y) / 2);
+}
+
+input {
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  padding: 0.5rem 0.75rem;
+  color: inherit;
+  accent-color: var(--accent-color);
+}
+
+.required {
+  color: red;
+}

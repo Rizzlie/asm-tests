@@ -14,9 +14,14 @@
 }
 
 <ng-template #standardControl>
-  <div>
-    <label [for]="controlName"> {{ displayName }} </label>
-    <input [id]="controlName" [formControl]="control" [type]="type" />
+  <div class="control">
+    <ng-container *ngTemplateOutlet="label" />
+
+    <input
+      [id]="controlName"
+      [formControl]="control"
+      [type]="type"
+      autocomplete="off" />
 
     @if (control.touched && control.errors) {
       <asm-form-control-error
@@ -29,6 +34,15 @@
 <ng-template #checkboxControl>
   <div>
     <input [id]="controlName" [formControl]="control" type="checkbox" />
-    <label [for]="controlName"> {{ displayName }} </label>
+    <ng-container *ngTemplateOutlet="label" />
   </div>
+</ng-template>
+
+<ng-template #label>
+  <label [for]="controlName">
+    {{ displayName }}
+    @if (isRequired) {
+      <span class="required">*</span>
+    }
+  </label>
 </ng-template>

@@ -1,6 +1,11 @@
 import { NgTemplateOutlet } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { FormControlErrorComponent } from '../form-control-error/form-control-error.component';
 
 @Component({
@@ -21,4 +26,12 @@ export class FormControlComponent {
   @Input({ required: true }) displayName = 'Field';
   @Input({ required: true }) controlName!: string;
   @Input({ required: true }) control!: FormControl;
+
+  get isRequired() {
+    if (this.type === 'checkbox') {
+      return this.control.hasValidator(Validators.requiredTrue);
+    }
+
+    return this.control.hasValidator(Validators.required);
+  }
 }

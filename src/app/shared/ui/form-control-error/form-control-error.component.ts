@@ -1,5 +1,5 @@
 import { KeyValuePipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { ValidationErrors } from '@angular/forms';
 
 @Component({
@@ -12,4 +12,6 @@ import { ValidationErrors } from '@angular/forms';
 export class FormControlErrorComponent {
   @Input() errors: ValidationErrors = {};
   @Input() displayName = 'Field';
+
+  @HostBinding('class') class = 'form-control-error';
 }

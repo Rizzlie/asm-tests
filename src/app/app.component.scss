@@ -1,0 +1,19 @@
+:host {
+  margin-top: 8rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: var(--accent-color);
+  text-align: center;
+  margin-block: var(--gap-y);
+
+  span {
+    color: #f736e3;
+  }
+}

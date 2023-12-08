@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  border: 1px solid var(--border-color);
+  padding: var(--gap-y) var(--gap-x);
+  width: 600px;
+}
+
+form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--gap-y);
+}
