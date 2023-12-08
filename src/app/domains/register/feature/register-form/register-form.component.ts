@@ -5,13 +5,14 @@ import {
   LoaderComponent,
 } from '@/ui';
 import { EMAIL_PATTERN, matchValidator } from '@/utils';
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'asm-register-form',
@@ -52,19 +53,34 @@ export class RegisterFormComponent {
   loading = signal(false);
   success = signal(false);
 
+  #registerService = inject(RegisterService);
+
   submit() {
     this.loading.set(true);
 
-    setTimeout(() => {
-      if (this.form.value.login === 'admin') {
-        this.form.setErrors({ login: 'alreadyExists' });
-      } else {
-        this.showSuccess();
-        this.form.reset();
-      }
+    if (!this.form.valid) {
+      return;
+    }
 
-      this.loading.set(false);
-    }, 1500);
+    this.#registerService
+      .register({
+        firstName: this.form.value.firstName!,
+        lastName: this.form.value.lastName!,
+        login: this.form.value.login!,
+        email: this.form.value.email!,
+        password: this.form.value.password!,
+      })
+      .subscribe({
+        next: () => {
+          this.loading.set(false);
+          this.showSuccess();
+          this.form.reset();
+        },
+        error: () => {
+          this.loading.set(false);
+          this.form.setErrors({ login: 'alreadyExists' });
+        },
+      });
   }
 
   showSuccess() {
