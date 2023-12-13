@@ -104,6 +104,7 @@
               "zone.js",
               "zone.js/testing"
             ],
+            "browsers": "ChromeHeadless",
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [

@@ -56,11 +56,11 @@ export class RegisterFormComponent {
   #registerService = inject(RegisterService);
 
   submit() {
-    this.loading.set(true);
-
     if (!this.form.valid) {
       return;
     }
+
+    this.loading.set(true);
 
     this.#registerService
       .register({
