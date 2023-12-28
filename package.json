@@ -11,7 +11,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "format": "prettier --write \"src/**/*.ts\"",
-    "format:check": "prettier --check \"src/**/*.ts\""
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +41,7 @@
     "@angular-eslint/template-parser": "17.1.1",
     "@angular/cli": "^17.0.0",
     "@angular/compiler-cli": "^17.0.0",
+    "@cypress/schematic": "^2.5.1",
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "6.13.1",
     "@typescript-eslint/parser": "6.13.1",
@@ -54,7 +58,8 @@
     "ng-mocks": "^14.12.1",
     "prettier": "^3.1.0",
     "prettier-eslint": "^16.1.2",
-    "typescript": "~5.2.2"
+    "typescript": "~5.2.2",
+    "cypress": "latest"
   },
   "msw": {
     "workerDirectory": "src"
