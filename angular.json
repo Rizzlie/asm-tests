@@ -117,6 +117,29 @@
             "scripts": []
           }
         },
+        "test-nm": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "browsers": "ChromeHeadless",
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": [],
+            "include": [
+              "**/nm_*.spec.ts"
+            ]
+          }
+        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
