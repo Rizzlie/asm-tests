@@ -25,7 +25,7 @@ describe('Register Form', () => {
       .navigate()
       .firstName('John')
       .lastName('Doe')
-      .login('admin')
+      .login('mockAdmin')
       .email('john.doe@example.com')
       .password('Pa$$w0rd!')
       .repeatPassword('Pa$$w0rd!')
