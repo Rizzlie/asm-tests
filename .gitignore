@@ -5,6 +5,8 @@
 /tmp
 /out-tsc
 /bazel-out
+/storybook-static
+documentation.json
 
 # Node
 /node_modules
@@ -36,6 +38,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+/.nx
 
 # System files
 .DS_Store
