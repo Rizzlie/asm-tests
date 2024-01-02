@@ -10,5 +10,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ButtonComponent {
   @Input() type: 'button' | 'submit' = 'button';
   @Input() disabled = false;
+  @Input() dataCy?: string;
   @Output() clicked = new EventEmitter<void>();
+
+  handleClick() {
+    this.clicked.emit();
+  }
 }

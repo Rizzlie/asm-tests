@@ -1,41 +1,25 @@
-import { AlertComponent, ButtonComponent, LoaderComponent } from '@/ui';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RegisterFormComponent } from '@/domains/register';
+import { fakeAsync, flush, tick } from '@angular/core/testing';
 import {
-  ComponentFixture,
-  fakeAsync,
-  flush,
-  TestBed,
-  tick,
-} from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
+  MockBuilder,
+  MockedComponentFixture,
+  MockRender,
+  ngMocks,
+} from 'ng-mocks';
 import { delay, of, throwError } from 'rxjs';
 import { RegisterService } from '../register.service';
 
-import { RegisterFormComponent } from './register-form.component';
-
-describe('RegisterFormComponent', () => {
+describe(RegisterFormComponent.name, () => {
   let component: RegisterFormComponent;
-  let fixture: ComponentFixture<RegisterFormComponent>;
+  let fixture: MockedComponentFixture<RegisterFormComponent>;
   let registerService: RegisterService;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule,
-        RegisterFormComponent,
-        ReactiveFormsModule,
-        ButtonComponent,
-        LoaderComponent,
-        AlertComponent,
-      ],
-      providers: [RegisterService],
-    }).compileComponents();
+  beforeEach(() => MockBuilder([RegisterFormComponent], [RegisterService]));
 
-    fixture = TestBed.createComponent(RegisterFormComponent);
-    registerService = TestBed.inject(RegisterService);
-    component = fixture.componentInstance;
-
-    fixture.detectChanges();
+  beforeEach(() => {
+    fixture = MockRender(RegisterFormComponent);
+    component = fixture.point.componentInstance;
+    registerService = ngMocks.findInstance(RegisterService);
   });
 
   it('should create', () => {

@@ -1,3 +1,7 @@
-<button [disabled]="disabled" [type]="type" (click)="clicked.emit()">
+<button
+  [attr.data-cy]="dataCy"
+  [disabled]="disabled"
+  [type]="type"
+  (click)="handleClick()">
   <ng-content />
 </button>
