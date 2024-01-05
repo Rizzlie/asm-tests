@@ -36,6 +36,23 @@ export const Default: Story = {
     label: 'Button',
     type: 'button',
   },
+  argTypes: {
+    dataCy: {
+      table: {
+        disable: true,
+      },
+    },
+    clicked: {
+      table: {
+        disable: true,
+      },
+    },
+    handleClick: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export const Disabled: Story = {

@@ -25,7 +25,7 @@ export class FormControlComponent {
     'text';
   @Input({ required: true }) displayName = 'Field';
   @Input({ required: true }) controlName!: string;
-  @Input({ required: true }) control!: FormControl;
+  @Input({ required: true }) control = new FormControl();
 
   get isRequired() {
     if (this.type === 'checkbox') {

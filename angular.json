@@ -206,7 +206,10 @@
               "-d",
               "."
             ],
-            "port": 6006
+            "port": 6006,
+            "assets": [
+              "src/mockServiceWorker.js"
+            ]
           }
         },
         "build-storybook": {
@@ -221,7 +224,10 @@
               "-d",
               "."
             ],
-            "outputDir": "storybook-static"
+            "outputDir": "storybook-static",
+            "assets": [
+              "src/mockServiceWorker.js"
+            ]
           }
         }
       }

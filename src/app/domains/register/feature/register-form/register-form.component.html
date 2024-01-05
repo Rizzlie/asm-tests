@@ -1,5 +1,9 @@
 @if (success()) {
-  <asm-alert data-cy="success-alert" class="m-b-10" type="success"
+  <asm-alert
+    data-cy="success-alert"
+    data-testid="success-alert"
+    class="m-b-10"
+    type="success"
     >Success!</asm-alert
   >
 }
@@ -10,7 +14,11 @@
 
 <form [formGroup]="form" (ngSubmit)="submit()">
   @if (form.errors && form.errors['login']) {
-    <asm-alert data-cy="error-alert" class="m-b-10" type="error"
+    <asm-alert
+      data-cy="error-alert"
+      data-testid="error-alert"
+      class="m-b-10"
+      type="error"
       >Login taken!</asm-alert
     >
   }

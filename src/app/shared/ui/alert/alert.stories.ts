@@ -35,11 +35,25 @@ export const Success: Story = {
     label: 'Success',
     type: 'success',
   },
+  argTypes: {
+    type: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export const Error: Story = {
   args: {
     label: 'Error',
     type: 'error',
+  },
+  argTypes: {
+    type: {
+      table: {
+        disable: true,
+      },
+    },
   },
 };

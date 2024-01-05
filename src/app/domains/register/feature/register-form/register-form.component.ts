@@ -28,27 +28,24 @@ import { RegisterService } from '../register.service';
   styleUrl: './register-form.component.scss',
 })
 export class RegisterFormComponent {
-  form = new FormGroup(
-    {
-      firstName: new FormControl('', [Validators.required]),
-      lastName: new FormControl('', [Validators.required]),
-      login: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.pattern(EMAIL_PATTERN),
-        Validators.minLength(6),
-        Validators.maxLength(25),
-        matchValidator('repeatPassword', true),
-      ]),
-      repeatPassword: new FormControl('', [
-        Validators.required,
-        matchValidator('password'),
-      ]),
-      tos: new FormControl(false, [Validators.requiredTrue]),
-    },
-    { updateOn: 'blur' }
-  );
+  form = new FormGroup({
+    firstName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
+    login: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.pattern(EMAIL_PATTERN),
+      Validators.minLength(6),
+      Validators.maxLength(25),
+      matchValidator('repeatPassword', true),
+    ]),
+    repeatPassword: new FormControl('', [
+      Validators.required,
+      matchValidator('password'),
+    ]),
+    tos: new FormControl(false, [Validators.requiredTrue]),
+  });
 
   loading = signal(false);
   success = signal(false);

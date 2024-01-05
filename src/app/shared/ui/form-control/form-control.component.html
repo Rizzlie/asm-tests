@@ -22,11 +22,13 @@
       [formControl]="control"
       [type]="type"
       [attr.data-cy]="controlName"
+      [attr.data-testid]="controlName"
       autocomplete="off" />
 
     @if (control.touched && control.errors) {
       <asm-form-control-error
         [attr.data-cy]="controlName + '-error'"
+        [attr.data-testid]="controlName + '-error'"
         [errors]="control.errors"
         [displayName]="displayName" />
     }
@@ -38,6 +40,7 @@
     <input
       [id]="controlName"
       [attr.data-cy]="controlName"
+      [attr.data-testid]="controlName"
       [formControl]="control"
       type="checkbox" />
     <ng-container *ngTemplateOutlet="label" />
