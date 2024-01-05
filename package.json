@@ -36,13 +36,13 @@
     "zone.js": "~0.14.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular-devkit/build-angular": "^17.1.0-rc.0",
     "@angular-eslint/builder": "17.1.1",
     "@angular-eslint/eslint-plugin": "17.1.1",
     "@angular-eslint/eslint-plugin-template": "17.1.1",
     "@angular-eslint/schematics": "17.1.1",
     "@angular-eslint/template-parser": "17.1.1",
-    "@angular/cli": "^17.0.0",
+    "@angular/cli": "^17.1.0-rc.0",
     "@angular/compiler-cli": "^17.0.0",
     "@compodoc/compodoc": "^1.1.23",
     "@cypress/schematic": "^2.5.1",
@@ -58,6 +58,7 @@
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "6.13.1",
     "@typescript-eslint/parser": "6.13.1",
+    "@web/test-runner": "^0.18.0",
     "chromatic": "^10.2.0",
     "cypress": "latest",
     "eslint": "^8.54.0",
